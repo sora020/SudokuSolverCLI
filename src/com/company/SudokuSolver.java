@@ -11,17 +11,16 @@ class SolveSudoku {
     /*Takes a partially filled-in grid and attempts to assign values to all
         unassigned locations in such a way to meet the requirements for Sudoku
         solution (non-duplication across rows, columns, and boxes). The function
-        operates via recursive backtracking: it finds an unassigned location with
-        the grid and then considers all digits from 1 to 9 in a loop. If a digit
-        is found that has no existing conflicts, tentatively assign it and recur
-        to attempt to fill in rest of grid. If this was successful, the puzzle is
-        solved. If not, unmake that decision and try again. If all digits have
-        been examined and none worked out, return false to backtrack to previous
-        decision point.*/
-    /* Searches the grid to find an entry that is still unassigned. If found,
-        the reference parameters row, col will be set the location that is
-        unassigned, and true is returned. If no unassigned entries remain, false
-        is returned.*/
+        operates via recursive backtracking: first it Searches the grid to find
+        an entry that is still unassigned. If found, the reference parameters row,
+        col will be set the location that is unassigned, and true is returned. If
+        no unassigned entries remain, false is returned and then it finds an
+        unassigned location with the grid and then considers all digits from 1 to
+        9 in a loop. If a digit is found that has no existing conflicts,
+        tentatively assign it and recur to attempt to fill in rest of grid. If
+        this was successful, the puzzle is solved. If not, unmake that decision
+        and try again. If all digits have been examined and none worked out,
+        return false to backtrack to previous decision point.*/
         int row = -1, col = -1;
         boolean isEmpty = true;
         for (int i = 0; i < l; i++) {
@@ -91,6 +90,7 @@ class SolveSudoku {
 
     void printSudoku(int[][] mat, int l) {
         System.out.println("After solving the Sudoko Here is the result: ");
+        System.out.println(" ______________________ ");
         for (int i = 0; i < l; i++) {
             System.out.print("|");
             for (int j = 0; j < l; j++) {
@@ -100,7 +100,7 @@ class SolveSudoku {
             }
             System.out.println();
             if ((i + 1) % 3 == 0)
-                System.out.println("_______________________");
+                System.out.println(" _______________________ ");
         }
     }
 }
@@ -116,7 +116,7 @@ public class SudokuSolver {
 
         /* Use this block when testing
             Comment the User scanner input for array elements section
-            int[][] mat1 = new int[][]
+            int[][] mat = new int[][]
                {{3, 0, 6, 5, 0, 8, 4, 0, 0},
                 {5, 2, 0, 0, 0, 0, 0, 0, 0},
                 {0, 8, 7, 0, 0, 0, 0, 3, 1},
@@ -148,6 +148,7 @@ public class SudokuSolver {
 
                 //Showing elements of array for user
                 System.out.println("You have entered the following values: ");
+                System.out.println(" ______________________ ");
                 for (int i = 0; i < 9; i++) {
                     System.out.print("|");
                     for (int j = 0; j < 9; j++) {
@@ -157,7 +158,7 @@ public class SudokuSolver {
                     }
                     System.out.println();
                     if ((i + 1) % 3 == 0)
-                        System.out.println("_______________________");
+                        System.out.println(" ______________________ ");
                 }
                 System.out.println("Enter Y to input values again" +
                         "\npress any other key to continue: ");
