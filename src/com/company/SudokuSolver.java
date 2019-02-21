@@ -137,7 +137,16 @@ public class SudokuSolver {
 0 0 0 0 0 0 0 7 4
 0 0 5 2 0 6 3 0 0
     */
-
+/*      0 1 0 0 0 0 6 0 0
+        0 0 5 8 6 0 0 0 0
+        9 0 0 3 0 0 0 1 0
+        6 0 0 0 9 0 0 5 0
+        0 5 9 0 0 0 1 6 0
+        0 4 0 0 2 0 0 0 3
+        0 9 0 0 0 7 0 0 5
+        0 0 0 0 4 3 8 0 0
+        0 0 2 0 0 0 0 3 0
+*/
         do {
             do {
                 //Entering elements of array from user
@@ -170,7 +179,7 @@ public class SudokuSolver {
             } else
                 System.out.println("No Solution");
             System.out.println("Enter Y to run the program again" +
-                    "press any other key to continue: ");
+                    "\npress any other key to continue: ");
             ch1 = sc.next().charAt(0);
         } while (ch1 == 'y' || ch1 == 'Y');
         sc.close();
